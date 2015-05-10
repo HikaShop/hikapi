@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>HikAPI plugin</name>
+	<creationDate>{__DAY__} {__MONTH__} {__YEAR__}</creationDate>
+	<version>{__PLUGIN_VERSION__}</version>
+	<author>HikaShop</author>
+	<authorEmail>dev@hikashop.com</authorEmail>
+	<authorUrl>http://www.hikashop.com</authorUrl>
+	<copyright>(C) 2010-{__YEAR__} HIKARI SOFTWARE. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>HikAPI plugin to catch the web services calls</description>
+	<files>
+		<filename plugin="hikapi">hikapi.php</filename>
+		<filename>hikapihelper.php</filename>
+	</files>
+	<params>
+		<param name="api_start" type="text" default="hikapi" label="API entry point" description="gives the entry point for the API system"/>
+		<param name="token_frame" type="list" default="15" label="Token duration" description="duration of the validaty for a user token">
+			<option value="5">5min</option>
+			<option value="15">15min</option>
+			<option value="30">30min</option>
+			<option value="60">1h</option>
+			<option value="180">3h</option>
+			<option value="360">6h</option>
+			<option value="720">12h</option>
+			<option value="1440">24h</option>
+		</param>
+		<param name="salt" type="text" default="" label="Hash salt" description="Salt used for the token generation. Generated automatically if empty"/>
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="api_start" type="text" default="hikapi" label="API entry point" description="give the entry point for the API system"/>
+				<field name="token_frame" type="list" default="15" label="Token duration" description="duration of the validaty for a user token">
+					<option value="5">5min</option>
+					<option value="15">15min</option>
+					<option value="30">30min</option>
+					<option value="60">1h</option>
+					<option value="180">3h</option>
+					<option value="360">6h</option>
+					<option value="720">12h</option>
+					<option value="1440">24h</option>
+				</field>
+				<field name="salt" type="text" default="" label="Hash salt" description="Salt used for the token generation. Generated automatically if empty"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
