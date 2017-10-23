@@ -604,6 +604,7 @@ class HikApiPlugin extends JPlugin {
 				if(isset($value['ctrl']))
 					$l_ctrl = $value['ctrl'];
 				$helper->register($key, $l_ctrl, $params, $options);
+				unset($l_ctrl);
 			}
 		}
 	}

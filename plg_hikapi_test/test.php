@@ -50,7 +50,7 @@ class plgHikapiTest extends HikApiPlugin {
 		switch($url) {
 			case '/simple':
 				return $this->getSimpleValues($helper, $params, $data);
-			case '/param':
+			case '/param/:id':
 				return $this->getParamsValues($helper, $params, $data);
 			case '/test-pagination':
 				return $this->getMyTestPagination($helper, $params, $data);

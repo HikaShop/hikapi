@@ -79,7 +79,7 @@ class plgSystemHikapi extends JPlugin {
 		// Retrive the called URL
 		//
 		$url = $path;
-		if(strpos($url, $base) !== 0)
+		if(!empty($base) && strpos($url, $base) !== 0)
 			return;
 
 		$url = ltrim(substr($url, strlen($base)), '/');
